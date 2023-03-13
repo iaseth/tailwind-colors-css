@@ -1,6 +1,10 @@
 import { useState } from 'react';
 
 import './App.scss';
+import Palette from './Palette/Palette';
+
+import colorsJson from '../../crawler/colors.json';
+const colors = colorsJson.colors;
 
 
 
@@ -12,8 +16,10 @@ function App () {
 				<h4>Tailwind Colors</h4>
 			</header>
 
-			<main className="min-h-screen bg-zinc-200 px-8 py-4">
-				<h4></h4>
+			<main className="min-h-screen bg-zinc-200">
+				<section className="">
+					{colors.map((color, k) => <Palette key={k} {...{color}} />)}
+				</section>
 			</main>
 
 			<footer className="bg-zinc-800 text-white px-4 py-12 text-center">
